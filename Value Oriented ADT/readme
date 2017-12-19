@@ -1,0 +1,27 @@
+***note: my CD.cpp file is currently compiled and built using the CD artist to compare keys/items, it is a simple commenting/uncommenting to change it to the original***
+
+Sorted List Array Documentation::
+
+SortedListArray(int (*comp_items)(T* item_1, T* item_2), int (*comp_keys)(String* key, T* item));
+	- this is the constructor for this class, to use it simply pass it the function pointers for the comp_items and 		comp_keys of the data type you are using (T)
+
+~SortedListArray();
+	-this is the destructor for this class, to use it simply use: delete <name of class instance>;
+
+bool isEmpty();
+	-this will return 1 if the list is empty, and a 0 if the list has 1+ items in it
+
+int size();
+	-this will return the number of items in your list
+
+T* get(String* search_key);
+	-to use this, simply pass it the name of the item you wish to retrieve from the list, and if that item is in the list, 		it will return that item
+
+void add(T* item);
+	-this adds your item of data type <T> to the list (sorts the list while it adds)
+
+void remove(String* search_key);
+	-this will remove your item named search_key from the list if it exsists
+
+ListArrayIterator<T>* iterator();
+	-this creates an iterator so you can easily iterate through your list

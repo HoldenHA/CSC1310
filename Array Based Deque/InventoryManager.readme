@@ -1,0 +1,19 @@
+InventoryManager(bool inventory_choice); 
+	pre: If you are using LIFO invetory_choice is TRUE; FIFO mean inventory_choice is FALSE
+	post: An inventory manager object is created 
+
+~InventoryManager();
+	pre: none
+	post: inventory manager object is deleted
+
+void buyWidgets(double cost, int num_to_buy);
+	pre: cost is a number between 0, 1000000; num_to_buy is a number between 1, 1000000
+	post: num_to_buy widgets are added to the inventory with a cost of cost 
+
+double getTotalProfit();
+	pre: none
+	post: totalProfit is returned; totalProfit = total of all calls to sellWidgets
+
+double sellWidgets(double price, int num_to_sell);
+	pre: price is a number between 0, 1000000; num_to_sell is a number between 1, 1000000
+	post: sellPrice is returned; sellPrice = (price * num_to_sell) - (num_to_sell*costOfWidgets (value is different 		depending on if you are using FIFO or LIFO b/c each cost is determined by the next item in the inventory))
